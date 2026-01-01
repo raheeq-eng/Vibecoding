@@ -1,0 +1,2 @@
+# Vibecoding
+simple vibecoding website .
