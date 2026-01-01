@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Coding</title>
+    <style>
+        /* --- CSS Variables & Color Palette --- */
+        :root {
+            --bg-color: #FDFBF7;       
+            --text-color: #4A4A4A;     
+            --card-bg: #FFFFFF;        
+            --accent-bg: #F0F4F8;      
+            --header-text: #5A67D8;    
+            --highlight: #81A1C1;      
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --border-radius: 16px;
+        }
+
+        body.dark-mode {
+            --bg-color: #1A202C;       
+            --text-color: #E2E8F0;     
+            --card-bg: #2D3748;        
+            --accent-bg: #2D3748;
+            --header-text: #A3BFFA;
+            --highlight: #90CDF4;      
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: all 0.4s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        [lang="ar"] {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .header-wrapper {
+            background-color: var(--accent-bg);
+            padding: 1rem 0;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            color: var(--header-text);
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: var(--card-bg);
+            border: 1px solid var(--highlight);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: var(--highlight);
+            color: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            flex: 1;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            align-items: center;
+        }
+
+        @media (min-width: 900px) {
+            .hero-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .text-block h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+        }
+
+        .image-block img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .tools-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: var(--text-color);
+            border: 1px solid transparent;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            border-color: var(--highlight);
+            transform: translateY(-3px);
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--header-text);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--accent-bg);
+        }
+
+        .tagline { opacity: 0.6; font-style: italic; display: block; }
+    </style>
+</head>
+<body class="light-mode">
+
+    <div class="header-wrapper">
+        <header>
+            <h1 id="site-title">Vibe Coding</h1>
+            <div class="controls">
+                <button class="btn" id="lang-btn">العربية</button>
+                <button class="btn" id="theme-btn">Type: Light</button>
+            </div>
+        </header>
+    </div>
+
+    <div class="container">
+        <main>
+            <section class="hero-grid">
+                <div class="text-block">
+                    <h2 id="head-1">What is it?</h2>
+                    <p id="desc-1">Vibe coding is a modern approach to software where you focus on the idea, not the syntax. You are the architect; AI is the builder.</p>
+                </div>
+
+                <div class="image-block">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800" alt="AI Visual">
+                </div>
+
+                <div class="text-block">
+                    <h2 id="head-2">How to flow?</h2>
+                    <p id="desc-2">Dream it, describe it in plain English, and refine it until it's perfect. No degree required.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 id="head-3">Start Your Flow</h2>
+                <div class="tools-grid">
+                    <a href="https://gemini.google.com" target="_blank" class="card">
+                        <strong>Google Gemini ↗</strong>
+                        <span id="card-1">Your AI partner for brainstorming and generating ideas.</span>
+                    </a>
+                    <a href="https://www.cursor.com" target="_blank" class="card">
+                        <strong>Cursor Editor ↗</strong>
+                        <span id="card-2">An AI-native editor that writes code for you inside your files.</span>
+                    </a>
+                    <a href="https://replit.com" target="_blank" class="card">
+                        <strong>Replit ↗</strong>
+                        <span id="card-3">A cloud-based workspace that lets you build and deploy apps instantly with AI help.</span>
+                    </a>
+                    <a href="https://www.usegalileo.ai" target="_blank" class="card">
+                        <strong>Galileo AI ↗</strong>
+                        <span id="card-4">A specialized tool that turns text descriptions into high-quality UI designs.</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <strong id="footer-logo">Vibe Coding</strong>
+        <span class="tagline" id="footer-tag">Coding with flow, not complexity.</span>
+        <div style="margin-top:1rem; opacity:0.5">© 2025</div>
+    </footer>
+
+    <script>
+        const langBtn = document.getElementById('lang-btn');
+        const themeBtn = document.getElementById('theme-btn');
+        const body = document.body;
+        const html = document.documentElement;
+
+        const translations = {
+            en: {
+                title: "Vibe Coding",
+                btnTheme: "Type: ",
+                btnLang: "العربية",
+                head1: "What is it?",
+                desc1: "Vibe coding is a modern approach to software where you focus on the idea, not the syntax. You are the architect; AI is the builder.",
+                head2: "How to flow?",
+                desc2: "Dream it, describe it in plain English, and refine it until it's perfect. No degree required.",
+                head3: "Start Your Flow",
+                card1: "Your AI partner for brainstorming and generating ideas.",
+                card2: "An AI-native editor that writes code for you inside your files.",
+                card3: "A cloud-based workspace that lets you build and deploy apps instantly with AI help.",
+                card4: "A specialized tool that turns text descriptions into high-quality UI designs.",
+                footerTag: "Coding with flow, not complexity."
+            },
+            ar: {
+                title: "برمجة الفايب",
+                btnTheme: "النمط: ",
+                btnLang: "English",
+                head1: "ما هي؟",
+                desc1: "برمجة الفايب هي نهج حديث للبرمجيات حيث تركز على الفكرة وليس القواعد البرمجية. أنت المهندس والذكاء الاصطناعي هو البناء.",
+                head2: "كيف تبدأ؟",
+                desc2: "تخيل الفكرة، صفها بلغة بسيطة، وقم بتحسينها حتى تصبح مثالية. لا يتطلب الأمر شهادة جامعية.",
+                head3: "ابدأ رحلتك",
+                card1: "شريكك في التفكير وتوليد الأفكار البرمجية.",
+                card2: "محرر أكواد ذكي يكتب الأكواد نيابة عنك داخل ملفاتك.",
+                card3: "بيئة عمل سحابية تتيح لك بناء وتطوير التطبيقات فوراً بمساعدة الذكاء الاصطناعي.",
+                card4: "أداة متخصصة تحول الأوصاف النصية إلى تصاميم واجهات مستخدم عالية الجودة.",
+                footerTag: "البرمجة بالتدفق، لا بالتعقيد."
+            }
+        };
+
+        let currentLang = 'en';
+
+        langBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            updateLanguage();
+        });
+
+        function updateLanguage() {
+            const t = translations[currentLang];
+            html.setAttribute('lang', currentLang);
+            html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+            
+            document.getElementById('site-title').textContent = t.title;
+            document.getElementById('footer-logo').textContent = t.title;
+            langBtn.textContent = t.btnLang;
+            
+            document.getElementById('head-1').textContent = t.head1;
+            document.getElementById('desc-1').textContent = t.desc1;
+            document.getElementById('head-2').textContent = t.head2;
+            document.getElementById('desc-2').textContent = t.desc2;
+            document.getElementById('head-3').textContent = t.head3;
+            document.getElementById('card-1').textContent = t.card1;
+            document.getElementById('card-2').textContent = t.card2;
+            document.getElementById('card-3').textContent = t.card3;
+            document.getElementById('card-4').textContent = t.card4;
+            document.getElementById('footer-tag').textContent = t.footerTag;
+            
+            updateThemeButtonText();
+        }
+
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            updateThemeButtonText();
+        });
+
+        function updateThemeButtonText() {
+            const isDark = body.classList.contains('dark-mode');
+            const prefix = translations[currentLang].btnTheme;
+            const modeName = currentLang === 'en' 
+                ? (isDark ? 'Dark' : 'Light') 
+                : (isDark ? 'داكن' : 'فاتح');
+            themeBtn.textContent = prefix + modeName;
+        }
+    </script>
+</body>
+</html>
